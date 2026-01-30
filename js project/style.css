@@ -8,7 +8,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Montserrat",sans-serif;
+  
+}
+body{
+      font-family: "Montserrat",sans-serif;
 }
 header{
     position: sticky;
@@ -16,8 +19,10 @@ header{
     background-color: var(--clr1);
     padding: 1rem;
 }
-ul{
-    transition-delay: 0.3s;
+nav ul{
+    transition: 0.7s linear;
+    transform: translateY(-20px);
+    opacity: 0;
     display: flex;
     gap: 0 1rem;
     justify-content: end;
@@ -55,13 +60,14 @@ main .heroSection{
 }
 main .heroSection h1{
     color: var(--clr3);
-    background-color: var(--clr2);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    /*background-color: var(--clr2);*/
     border-radius: 10px;
     padding: 0.25rem;
-    transition-delay: 0.4s;
+    font-size: 2.5rem;
 }
 main .heroSection button{
-    transition-delay: 0.4s;
+
     position: absolute;
     width: 70px;
     height: 70px;
@@ -69,8 +75,9 @@ main .heroSection button{
     border: none;
     font-weight: bolder;
     font-size: 2rem;
-    transition: 0.5s;
-    
+    transition: 0.7s;
+    opacity: 0;
+    transform: translateY(50px);
 }
 main .heroSection .larr{
     left: 5%;
@@ -81,4 +88,8 @@ main .heroSection .rarr{
 main .heroSection button:hover{
     background-color: var(--clr1);
     color: var(--clr2);
+}
+main .heroSection button.show, nav ul.show{
+    opacity: 1;
+    transform: translate(0);
 }

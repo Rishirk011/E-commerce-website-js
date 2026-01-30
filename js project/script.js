@@ -6,7 +6,7 @@ let heroImg=document.querySelector(".heroImg");
 let index=0;
 function slider(){
       heroSec.style.backgroundImage=`url(${heroPho[index]})`;
-    if(index>=heroPho.length-1){
+    if(index>heroPho.length-1){
         index=0;
         heroSec.style.backgroundImage=`url(${heroPho[index]})`;
     }
@@ -25,4 +25,18 @@ function right(){
 }
 lftBtn.addEventListener("click",left);
 rgtBtn.addEventListener("click",right);
-document.body.style.backgroundImage = "url('path/to/your/image.jpg')";
+let nav=document.querySelector(".nav");
+
+let obsArr=[lftBtn,rgtBtn,nav];
+let int=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    })
+}
+
+)
+obsArr.forEach(x=>{
+    int.observe(x);
+})
